@@ -26,6 +26,59 @@ html, body {
     width: 100%;
     scroll-behavior: smooth;
 }
+#loader{
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loader h1{
+    font-size: 4vw;
+    color: transparent;
+    background: linear-gradient(to right,orange,orangered);
+    background-clip: text;
+    position: absolute;
+    opacity: 0;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+#loader h1:nth-child(2){
+    animation-delay: 2s;
+}
+#loader h1:nth-child(3){
+    animation-delay: 3s;
+}
+
+@keyframes load {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@media (max-width:600px) {
+    #loader h1{
+        font-size: 9vw;
+      
+    }
+}
 
 #main{
     width: 100%;
@@ -289,9 +342,8 @@ nav h3 {
     position: absolute;
     border-radius: 50%;
     background: linear-gradient(to top right, #ff2d03, #ff5c0b);
-
     z-index: 8;
-    top: 50%;
+    top: 30%;
     left: 25%;
     filter: blur(20px);
     animation-name: gooey;
@@ -569,26 +621,30 @@ nav h3 {
     justify-content: center;
     align-items: center;
     padding: 2vw 0;
-    position: relative; /* To allow absolute positioning of gooey elements */
-    overflow: hidden;   /* Hide the parts of the gooey effect that overflow */
+    position: relative;
+    overflow: hidden; 
 }
 
 .gooey1, .gooey2 {
-    position: absolute; /* Allow free positioning behind content */
-    width: 100vw; /* Increase width to cover the full screen */
-    height: 100vh; /* Increase height for a larger blob effect */
+    position: absolute; 
+    width: 100vw; 
+    height: 100vh; 
     border-radius: 50%;
-    z-index: 1; /* Ensure it is behind the content */
-    animation: footergooey 8s infinite alternate;
+    z-index: 1; /
+    animation-name: footergooey;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 /* Gooey 1 - Positioned at the left */
 .gooey1 {
-    left: -50vw; /* Move it further left to ensure it covers the full width */
-    top: 0; /* Position at the top of the viewport */
+    left: -50vw; 
+    top: 0;
     rotate: 12deg;
     background: linear-gradient(to bottom right, #FE320A, #fe6c0a);
-    filter: blur(100px); /* Increase blur for a softer look */
+    filter: blur(100px); 
     animation-name: footergooey;
     animation-duration: 6s;
     animation-timing-function: linear;
@@ -598,11 +654,11 @@ nav h3 {
 
 /* Gooey 2 - Positioned at the right */
 .gooey2 {
-    right: -50vw; /* Move it further right to cover the full width */
-    top: 20%; /* Adjust top position for a dynamic effect */
+    right: -50vw;
+    top: 20%; 
     rotate: -12deg;
     background: #FE320A;
-    filter: blur(100px); /* Increase blur for a softer look */
+    filter: blur(100px); 
     animation-name: footergooey;
     animation-duration: 6s;
     animation-timing-function: linear;
@@ -643,10 +699,10 @@ nav h3 {
 
 #footer-left h4 {
     text-decoration: none;
-    font-size: 4.8vh;
+    font-size: 7vh;
     color: white;
     letter-spacing: -0.9px;
-    line-height: 33px;
+    line-height: 7vh;
     cursor: pointer;
     transition: all 0.5s ease;
 }
@@ -864,7 +920,7 @@ input::placeholder {
         position: absolute;
         border-radius: 50%;
         background: linear-gradient(to top right, #ff2d03, #ff5c0b);
-        top: 58%;
+        top: 25%;
         left: 25%;
         filter: blur(20px);
         animation-name: gooey;
