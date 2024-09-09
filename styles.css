@@ -569,8 +569,58 @@ nav h3 {
     justify-content: center;
     align-items: center;
     padding: 2vw 0;
+    position: relative; /* To allow absolute positioning of gooey elements */
+    overflow: hidden;   /* Hide the parts of the gooey effect that overflow */
 }
 
+.gooey1, .gooey2 {
+    position: absolute; /* Allow free positioning behind content */
+    width: 100vw; /* Increase width to cover the full screen */
+    height: 100vh; /* Increase height for a larger blob effect */
+    border-radius: 50%;
+    z-index: 1; /* Ensure it is behind the content */
+    animation: footergooey 8s infinite alternate;
+}
+
+/* Gooey 1 - Positioned at the left */
+.gooey1 {
+    left: -50vw; /* Move it further left to ensure it covers the full width */
+    top: 0; /* Position at the top of the viewport */
+    rotate: 12deg;
+    background: linear-gradient(to bottom right, #FE320A, #fe6c0a);
+    filter: blur(100px); /* Increase blur for a softer look */
+    animation-name: footergooey;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Gooey 2 - Positioned at the right */
+.gooey2 {
+    right: -50vw; /* Move it further right to cover the full width */
+    top: 20%; /* Adjust top position for a dynamic effect */
+    rotate: -12deg;
+    background: #FE320A;
+    filter: blur(100px); /* Increase blur for a softer look */
+    animation-name: footergooey;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes footergooey {
+    from {
+        transform: translate(10%, -10%) skew(0);
+    }
+    to {
+        transform: translate(-10%, 10%) skew(-12deg);
+    }
+}
+
+
+/* Ensure footer-container is above the gooey elements */
 #footer-container {
     padding: 2vw;
     display: flex;
@@ -578,7 +628,9 @@ nav h3 {
     gap: 2vw;
     align-items: center;
     color: white;
-    width: 90%; /* Adjust width for responsiveness */
+    width: 90%;
+    position: relative;
+    z-index: 2; 
 }
 
 /* Top Section */
@@ -588,7 +640,6 @@ nav h3 {
     width: 100%;
     height: 20vh;
 }
-
 
 #footer-left h4 {
     text-decoration: none;
@@ -626,7 +677,7 @@ nav h3 {
 }
 
 #footer-form input {
-    width: 70%; /* Adjust width for responsiveness */
+    width: 70%;
     background: transparent;
     border: none;
     border-bottom: 1px solid #fc0000;
@@ -638,18 +689,18 @@ nav h3 {
 }
 
 input::placeholder {
-    color: #dad8d8; 
+    color: #dad8d8;
 }
 
 #footer-form a {
-    font-size: 3vw; /* Adjust for responsiveness */
+    font-size: 3vw;
     color: #EFEAE3;
     text-decoration: none;
 }
 
 /* Bottom Section */
 #bottom h1 {
-    font-size: 21vw; /* Adjusted for responsiveness */
+    font-size: 21vw;
 }
 
 #bottom-wrapper {
