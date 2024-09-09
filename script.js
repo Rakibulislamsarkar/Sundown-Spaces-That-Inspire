@@ -4,7 +4,7 @@ const scroll = new LocomotiveScroll({
 });
 
 
-function page4Animation() {
+function page3Animation() {
     var elemC = document.querySelector("#elem-container");
     var fixed = document.querySelector("#fixed-image");
 
@@ -62,13 +62,7 @@ function loaderAnimation() {
     }, 4200)
 }
 
-swiperAnimation()
-page4Animation()
-menuAnimation()
-loaderAnimation()
-
-
-document.addEventListener('DOMContentLoaded', () => {
+function page4Animation() {
     const options = document.querySelectorAll('#down-left .option');
     const image = document.getElementById('displayed-image');
     const paragraphs = document.querySelectorAll('#tab-details p');
@@ -83,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             option.classList.add('selected');
             const imageName = option.getAttribute('data-image');
-            image.src = `./New folder/${imageName}.webp`;
+            image.src = `./New folder/${imageName}.png`;
 
             
             paragraphs[index].style.display = 'block';
@@ -93,12 +87,23 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const defaultOption = document.querySelector('#down-left .option[data-image="design"]');
     defaultOption.classList.add('selected');
-    image.src = './New folder/design.webp';
+    image.src = './New folder/Design.png';
 
 
     paragraphs.forEach((paragraph, index) => {
         paragraph.style.display = (index === 0) ? 'block' : 'none';
     });
-});
+}
+
+page4Animation()
+swiperAnimation()
+page3Animation()
+menuAnimation()
+loaderAnimation()
+
+
+
+
+
 
 
