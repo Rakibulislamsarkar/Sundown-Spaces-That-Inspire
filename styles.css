@@ -27,14 +27,10 @@ html, body {
     scroll-behavior: smooth;
 }
 
-/* #main{
+#main{
     width: 100%;
-    min-height: 100vh;
-    position: relative;
-    z-index: 100;
-    overflow: hidden;
     background-color: #000;
-} */
+}
 
 
 #page1,
@@ -44,9 +40,10 @@ html, body {
 #page5{
     min-height: 100vh;
     width: 100%;
+    height: auto;
     background-color: #EFEAE3;
     padding: 2vw 2vw;
-    position: relative;
+    position: static;
 }
 /* ----------------------------------------------------------------------------- PAGE1 ----------------------------------------------------------------------------- */
 nav{
@@ -380,7 +377,6 @@ nav h3 {
 #fixed-image {
     height: 30vw;
     width: 24vw;
-    /* background-color: red; */
     border-radius: 15px;
     position: fixed;
     z-index: 99;
@@ -562,165 +558,127 @@ nav h3 {
     text-align: start;
 }
 
-/* ------------------------------------------------------------------------------------------------- Section-6 --------------------------------------------------------------------------------------- */
-/* .section-6 {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
+/* ------------------------------------------------------------------------------------------------- Footer --------------------------------------------------------------------------------------- */
 
-.footer {
-    overflow: hidden;
-    position: relative;
-    position: fixed;
-    bottom: 0;
-    z-index: 7;
+/* Base Footer Styling */
+#footer {
     width: 100%;
-    height: 100%;
-    color: white;
-    background-color: black;
-}
-
-.footer-top {
-    position: relative;
-    width: 90%;
-    margin: auto;
-    font-size: 2vw;
-    height: 35%;
+    height: auto; 
+    background-color: #000;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    padding: 2vw 0;
 }
 
-.footer-top-left {
-    font-family: nhdm;
-
-}
-
-.footer-top-right {
+#footer-container {
+    padding: 2vw;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 30%;
-    font-weight: 500;
-
-    font-family: nhdl;
-}
-
-.footer-input {
-    display: flex;
-    color: white;
-    justify-content: space-between;
-    border-bottom: 1px solid #b5b5b59d;
-}
-
-.footer-input input {
-    color: white;
-    font-size: 1.5vw;
-    width: 90%;
-    background-color: transparent;
-    outline: none;
-    border: none;
-}
-
-.footer-input input::placeholder {
-    color: #d1cfcfbe;
-}
-
-.footer-middle {
-    font-family: nhdm;
-    font-size: 11vw;
-    height: 50%;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: end;
-    color: #EFEAE3;
-}
-
-.footer-middle h1 {
-    margin: 0px;
-    padding: 0px;
-    border-bottom: 1px solid #504A45;
-}
-
-.footer-bottom {
-    font-size: 1rem;
-    font-family: nhdl;
-    display: flex;
-    justify-content: space-between;
+    gap: 2vw;
     align-items: center;
-    padding: 40px;
+    color: white;
+    width: 90%; /* Adjust width for responsiveness */
 }
 
-.bubble-6 {
-    filter: blur(40px);
-    position: absolute;
-    left: 0;
-    top: -4%;
-    width: 60%;
-    height: 500px;
-    border-bottom-right-radius: 50%;
-    background-color: orangered;
-    animation: animation-div6 8s ease-in-out infinite;
+/* Top Section */
+#top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 20vh;
 }
 
-.bubble-7 {
-    position: absolute;
+
+#footer-left h4 {
+    text-decoration: none;
+    font-size: 4.8vh;
+    color: white;
+    letter-spacing: -0.9px;
+    line-height: 33px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+#footer-left h4:hover {
+    color: #c7c7c7;
+}
+
+#footer-right {
     width: 30%;
-    left: -10%;
-    height: 35%;
-    background-color: orangered;
-    filter: blur(40px);
-    transform: rotate(-45deg);
-    animation: animation-div6 8s ease-in-out infinite;
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3vw;
 }
 
-.bubble-8 {
-    filter: blur(40px);
-    position: absolute;
-    right: 0;
-    top: -4%;
-    width: 500px;
-    height: 500px;
-    border-bottom-left-radius: 50%;
-    background-color: orangered;
-    animation: animation-div6 8s ease-in-out infinite;
-    animation-delay: 4s;
-
+#footer-right p {
+    font-size: 3.2vh;
+    line-height: 26px;
+    font-weight: 200;
 }
 
-.bubble-9 {
-    position: absolute;
-    width: 300px;
-    right: -10%;
-    height: 300px;
-    background-color: orangered;
-    filter: blur(40px);
-    transform: rotate(45deg);
-    animation: animation-div6 8s ease-in-out infinite;
-    animation-delay: 4s;
+/* Form Section */
+#footer-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
-@keyframes animation-div6 {
-    0% {
-        height: 35%;
-    }
-
-    50% {
-        height: 25%;
-    }
-
-    100% {
-        height: 35%;
-    }
+#footer-form input {
+    width: 70%; /* Adjust width for responsiveness */
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fc0000;
+    border-left: 1px solid #ff0000;
+    padding: 1vw;
+    font-size: 1vw;
+    font-weight: 200;
+    color: #ffffff;
 }
- */
+
+input::placeholder {
+    color: #dad8d8; 
+}
+
+#footer-form a {
+    font-size: 3vw; /* Adjust for responsiveness */
+    color: #EFEAE3;
+    text-decoration: none;
+}
+
+/* Bottom Section */
+#bottom h1 {
+    font-size: 21vw; /* Adjusted for responsiveness */
+}
+
+#bottom-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1vw;
+    border-top: 1px solid #dadada;
+    width: 100%;
+}
+
+#bottom-wrapper a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2vw;
+    font-weight: 200;
+}
+
+#bottom-wrapper h3 {
+    font-size: 1.5vw;
+    line-height: 2vw;
+    font-weight: 200;
+}
+
+
 
 /* ------------------------------------------------------------------------------------------------- Respnsive Design -------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 600px) {
+    
     nav{
         padding: 8vw 5vw;
     }
@@ -1101,6 +1059,24 @@ nav h3 {
         font-weight: 100;
     }
 
+    .swiper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-slide {
+        width: 90%;
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        gap: 3vw;
+        border-right: none;
+        margin-top: 3vw;
+    }
 
       
     .swiper-slide h5{
@@ -1108,7 +1084,60 @@ nav h3 {
         font-weight: 200;
         font-size: 4vw;
         letter-spacing: 0.2vw;
-        line-height: 3.6vw;
+        line-height: 4vw;
         text-align: start;
     }
+    #footer-container{
+        padding: 5vw 2vw;
+        display: flex;
+        flex-direction: column;
+        gap: 10vh;
+        align-items: center;
+        color: white;
+        width: 90%;
+    }
+    #top{
+        display: flex;
+        flex-direction: column;
+        gap: 5vw;
+    }
+    #footer-left h4{
+        font-size: 7vw;
+        letter-spacing: -0.9px;
+        line-height: 30px;
+    }
+    #footer-form input{
+        width: 70%;
+        padding: 2vw;
+        font-size: 4vw;
+    }
+    #footer-form a{
+        font-size: 7vw;
+    }
+    #footer-right{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5vw;
+    }
+    #footer-right p{
+        font-size: 4vw;
+        line-height: 4vw;
+    }
+    #bottom-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+        padding-top: 4vw;
+    }
+    #bottom-wrapper h3{
+        font-size: 4vw;
+        line-height: 5vw;
+    }
+    #bottom-wrapper a{
+        font-size: 4vw;
+        font-weight: 200;
+    }
+
 }
