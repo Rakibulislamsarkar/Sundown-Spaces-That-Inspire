@@ -89,14 +89,21 @@ html, body {
 #page1,
 #page2,
 #page3,
-#page4,
-#page5{
+#page4{
     min-height: 100vh;
     width: 100%;
     height: auto;
     background-color: #EFEAE3;
     padding: 2vw 2vw;
-    position: static;
+    position: relative;
+}
+#page5{
+    width: 100%;
+    height: auto;
+    height: auto;
+    background-color: #EFEAE3;
+    padding: 5vw 2vw;
+    position: relative;
 }
 /* ----------------------------------------------------------------------------- PAGE1 ----------------------------------------------------------------------------- */
 nav{
