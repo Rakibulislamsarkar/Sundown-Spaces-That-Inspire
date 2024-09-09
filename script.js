@@ -73,29 +73,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const image = document.getElementById('displayed-image');
     const paragraphs = document.querySelectorAll('#tab-details p');
 
-    // Add click event listeners to option elements
+
     options.forEach((option, index) => {
         option.addEventListener('click', () => {
-            // Remove 'selected' class from all options and hide all paragraphs
+            
             options.forEach(opt => opt.classList.remove('selected'));
             paragraphs.forEach(paragraph => paragraph.style.display = 'none');
 
-            // Add 'selected' class to the clicked option
+            
             option.classList.add('selected');
             const imageName = option.getAttribute('data-image');
             image.src = `./New folder/${imageName}.webp`;
 
-            // Show the corresponding paragraph
+            
             paragraphs[index].style.display = 'block';
         });
     });
 
-    // Set the default option
+    
     const defaultOption = document.querySelector('#down-left .option[data-image="design"]');
     defaultOption.classList.add('selected');
     image.src = './New folder/design.webp';
 
-    // Hide all paragraphs except the first one
+
     paragraphs.forEach((paragraph, index) => {
         paragraph.style.display = (index === 0) ? 'block' : 'none';
     });
